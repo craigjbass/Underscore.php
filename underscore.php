@@ -8,18 +8,33 @@
  * For docs, license, tests, and downloads, see: http://brianhaveri.github.com/Underscore.php
  */
 
-// Returns an instance of __ for OO-style calls
+/**
+ * Returns an instance of __ for OO-style calls
+ *
+ * @return __
+ * /
 function __($item=null) {
   $__ = new __;
   if(func_num_args() > 0) $__->_wrapped = $item;
   return $__;
 }
 
-// Underscore.php
+/**
+ * Defines __ "class"
+ *
+ * /
 class __ {
   
-  // Start the chain
+  /**
+   * 
+   * @return something
+   * /
   private $_chained = false; // Are we in a chain?
+
+  /**
+   * 
+   * @return something
+   * /
   public function chain($item=null) {
     list($item) = self::_wrapArgs(func_get_args(), 1);
     
